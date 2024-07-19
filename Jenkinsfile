@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'master', 
-                    url: 'https://github.com/<your-username>/<your-repository-name>.git'
+                    url: 'https://github.com/manikanta5315/task_public_newproject2.git'
             }
         }
         stage('Build and Test') {
