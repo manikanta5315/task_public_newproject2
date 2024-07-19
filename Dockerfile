@@ -2,8 +2,7 @@
 FROM jenkins/jenkins
 
 # Install plugins required for Git and Docker support
-RUN apt-get update && \
-    apt-get install -y git docker docker-compose
+apt-get update && apt-get install -y git docker docker-compose
 
 # Configure Jenkins user home directory
 WORKDIR /var/lib/jenkins
