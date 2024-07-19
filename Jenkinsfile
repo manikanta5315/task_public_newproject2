@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Build and Test') {
             steps {
-                bat 'docker pull python:3.9-slim'  
-                bat '''
+                sh 'docker pull python:3.9-slim'  
+                sh '''
                     docker volume create volumevolume1
                     docker build -t jenkins-image .
                     docker run -d --name jenkinscontainer -v volumevolume1:/var/lib/jenkins jenkins-image
