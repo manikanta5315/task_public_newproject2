@@ -13,7 +13,8 @@ pipeline {
                 bat 'docker pull python:3.9-slim'  
                 bat '''
                     docker volume create volumevolume1
-                    docker run -d --name jenkinscontainer -v volumevolume1:/var/lib/jenkins jenkins/jenkins 
+                    docker build -t jenkins-image
+                    docker run -d --name jenkinscontainer -v volumevolume1:/var/lib/jenkins jenkins-image
                         pip install -r requirements.txt  
                         python test_app.py
                 '''
